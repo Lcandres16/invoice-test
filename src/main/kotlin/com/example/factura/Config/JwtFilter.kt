@@ -46,7 +46,7 @@ class JwtFilter: OncePerRequestFilter() {
         val username = jwtUtil.getUsername(jwt)
         val user: User = userDetailsService!!.loadUserByUsername(username) as User
 
-        // 4. Cargar al usuario en el contexto de seguridad.
+        // 4. Cargar al usuario en el contexto de seguridad
         val authenticationToken = UsernamePasswordAuthenticationToken(
             user.username, user.password, user.authorities
         )
